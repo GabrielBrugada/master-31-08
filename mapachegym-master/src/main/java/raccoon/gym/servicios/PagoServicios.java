@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import jakarta.validation.Valid;
 import raccoon.gym.entidades.Pago;
 import raccoon.gym.repositorios.PagoRepositorio;
 
@@ -33,4 +33,13 @@ public class PagoServicios {
     public void delete(Long id) {
         pagoRepositorio.deleteById(id);
     }
+
+    public List<Pago> obtenerTodosLosPagos() {
+           List<Pago> listaPagos = new ArrayList<Pago>();
+        pagoRepositorio.findAll().forEach(registro -> listaPagos.add(registro));
+        return listaPagos;
+    }
+     public void guardarPago(@Valid Pago pago) {
+    }
+    
 }

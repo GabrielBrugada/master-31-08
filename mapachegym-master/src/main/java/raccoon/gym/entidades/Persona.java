@@ -9,7 +9,7 @@ import lombok.Data;
 public class Persona {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(length = 8)

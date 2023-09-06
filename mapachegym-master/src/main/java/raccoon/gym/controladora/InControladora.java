@@ -11,4 +11,5 @@ public class InControladora {
       model.addAttribute("mensaje", "¡Hola desde el controlador!");
       return "index"; // nombre de la plantilla Thymeleaf sin extensión
     }
+    
 }

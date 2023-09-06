@@ -17,10 +17,10 @@ public class Pago implements Serializable {
     private int idPago;
 
     @Column(name = "fecha_pago")
-    private Date fechaPago;
+    private String fechaPago;
 
     @Column(name = "validez")
-    private Date validez;
+    private String validez;
 
     @Column(name = "valor_abonado")
     private double valorAbonado;

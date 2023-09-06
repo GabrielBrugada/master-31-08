@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.validation.Valid;
 import raccoon.gym.entidades.Membresia;
 import raccoon.gym.repositorios.MembresiaRepositorio;
 
@@ -32,5 +33,12 @@ public class MembresiaServicios {
 
     public void delete(Long id) {
         membresiaRepositorio.deleteById(id);
+    }
+    public void guardarMembresia(@Valid Membresia membresia) {
+    }
+    public List<Membresia> obtenerTodasLasMembresias() {
+      List<Membresia> listaMembresias = new ArrayList<Membresia>();
+        membresiaRepositorio.findAll().forEach(registro -> listaMembresias.add(registro));
+        return listaMembresias;
     }
 }

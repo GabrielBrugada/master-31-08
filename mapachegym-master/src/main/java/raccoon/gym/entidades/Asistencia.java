@@ -25,7 +25,7 @@ public class Asistencia implements Serializable {
     private String horaFin;
 
     @Column(name = "fecha")
-    private Date fecha;
+    private String fecha;
 
     // RELACION (N-1) CON EMPLEADO
     @ManyToOne(cascade = CascadeType.PERSIST)

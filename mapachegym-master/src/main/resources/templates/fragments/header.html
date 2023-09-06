@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-body-secondary" th:fragment="header">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-bg-dark"
+    th:fragment="header">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/index">MapacheGym</a>
+        <a class="navbar-brand"   href="/index">MapacheGym</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarScroll" aria-controls="navbarScroll"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -13,54 +14,46 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Link
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/formulario_empleado">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else
-                                here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Link</a>
-                </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <form class="form-inline" th:action="@{/logout}"
-                        method="POST">
-                        <button class="btn btn-link nav-link active"
-                            type="submit"
-                            onclick="return confirm('¿Seguro de cerrar sesión?')">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            Cerrar sesión
-                        </button>
-                    </form>
-                </li>
-                <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link active" aria-current="page"
-                        href="/login.html">
-                        <i class="fa-solid fa-right-to-bracket" ></i> Iniciar
-                        sesión
-                    </a>
-                </li>
-                <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link active" aria-current="page"
-                        href="/registro.html">
-                        <i class="fa-solid fa-user-plus"></i> Registrarse
-                    </a>
-                </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search"
-                    placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+                    <a class="nav-link" href="lista-empleado">Empleados</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista-membresia">Membresia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista-cliente">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista-asistencia">Asistencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista-pago">Pago</a>
+                    </li>
+
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <form class="form-inline" th:action="@{/logout}"
+                            method="POST">
+                            <button class="btn btn-link nav-link active"
+                                type="submit"
+                                onclick="return confirm('¿Seguro de cerrar sesión?')">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Cerrar sesión
+                            </button>
+                        </form>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAnonymous()">
+                        <a class="nav-link active" aria-current="page"
+                            href="login">
+                            <i class="fa-solid fa-right-to-bracket"></i> Iniciar
+                            sesión
+                        </a>
+                    </li>
+                    <li class="nav-item" sec:authorize="isAnonymous()">
+                        <a class="nav-link active" aria-current="page"
+                            href="registro">
+                            <i class="fa-solid fa-user-plus"></i> Registrarse
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>

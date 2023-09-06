@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.validation.Valid;
 import raccoon.gym.entidades.Cliente;
 import raccoon.gym.repositorios.ClienteRepositorio;
 
@@ -29,8 +30,16 @@ public class ClienteServicios {
     public void save(Cliente cliente) {
         clienteRepositorio.save(cliente);
     }
+     public void guardarCliente(@Valid Cliente cliente) {
+    }
 
     public void delete(Long id) {
         clienteRepositorio.deleteById(id);
+    }
+
+    public List<Cliente> obtenerTodosLasClientes() {
+        List<Cliente> listaClientes = new ArrayList<Cliente>();
+        clienteRepositorio.findAll().forEach(registro -> listaClientes.add(registro));
+        return listaClientes;
     }
 }

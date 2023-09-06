@@ -14,10 +14,13 @@ body {
 
 .navbar {
     z-index: 9999;
+    
 }
 
 .navbar-brand {
+    color: red;
     font-size: 35px;
+    
 }
 
 /* ---------------------------------------------------
